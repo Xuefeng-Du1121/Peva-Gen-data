@@ -1,0 +1,45 @@
+{
+  "name": "East China Sea seven-day real-field demonstration",
+  "region": "118-128E, 18-28N",
+  "start_time_utc": "2024-08-01T00:00:00Z",
+  "purpose": "Interactive functionality demonstration only; not an operational forecast or paper-result reproduction.",
+  "wind": {
+    "source": "ARCO-ERA5 public mirror, Google Cloud",
+    "original_dataset": "ECMWF/Copernicus ERA5",
+    "variables": ["u10", "v10"],
+    "temporal_coverage_hours": "0-168 (3-hourly)",
+    "processing": "Reduced Gaussian grid regridded to 0.25 degree regular lat-lon; exported as NetCDF3 for browser compatibility."
+  },
+  "smoc": {
+    "source": "Copernicus Marine Service",
+    "product": "GLOBAL_ANALYSISFORECAST_PHY_001_024",
+    "dataset": "cmems_mod_glo_phy_anfc_merged-uv_PT1H-i",
+    "source_file_sha256": "c52c2cef2ee3ec8b84711049ace2559f0d4b421702d4466a1ade72d3a45a07e7",
+    "source_variables": ["uo", "vo", "vsdx", "vsdy", "utide", "vtide", "utotal", "vtotal"],
+    "source_temporal_coverage": "2024-08-01T00:00:00Z to 2024-08-08T00:00:00Z (hourly, 169 frames)",
+    "browser_processing": "Every third hourly frame retained (57 frames); each U/V pair exported as NetCDF3 64-bit offset.",
+    "components": {
+      "current": {
+        "variables": ["uo", "vo"],
+        "file": "copernicus_current_20240801_7d_browser.nc",
+        "sha256": "6a9eb399c74737d0269732069256b505e891efdcbc2cbecac3802f5268485ade"
+      },
+      "stokes": {
+        "variables": ["vsdx", "vsdy"],
+        "file": "copernicus_stokes_20240801_7d_browser.nc",
+        "sha256": "b44569968344dbfc25429f0b6e69c08900d72ccfe03a3025797d3a77b0d5e0c3"
+      },
+      "tide": {
+        "variables": ["utide", "vtide"],
+        "file": "copernicus_tide_20240801_7d_browser.nc",
+        "sha256": "7a730c409763d57d1af798d337481d7af5ce94da50ab0405cbc7715ad2aeb3c1"
+      },
+      "total_validation_only": {
+        "variables": ["utotal", "vtotal"],
+        "file": "copernicus_total_20240801_7d_browser.nc",
+        "sha256": "2a58c1b5230eb72e160afd3ee8417de6fd94207e34fa924df91d8da9b0b52048"
+      }
+    },
+    "closure_check": "utotal/vtotal equals current + Stokes + tide within 0.001 m/s; total is not added again during integration."
+  }
+}

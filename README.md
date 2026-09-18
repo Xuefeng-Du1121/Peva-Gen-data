@@ -23,7 +23,7 @@ Large NetCDF and CSV files are stored with Git LFS. Install Git LFS before cloni
 - The Copernicus total current must not be added again to current + Stokes + tide components.
 - The data are intended for exploration and reproducible simulator inputs; they do not by themselves establish forecast or deployment performance.
 
-The code that consumes this bundle is available at [Peva-Gen-release](https://github.com/Xuefeng-Du1121/Peva-Gen-release).
+The code that consumes this bundle is available at [Peva-Gen](https://github.com/Xuefeng-Du1121/Peva-Gen).
 
 For the formal ocean-field experiments, the surface current field is:
 

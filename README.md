@@ -24,3 +24,9 @@ Large NetCDF and CSV files are stored with Git LFS. Install Git LFS before cloni
 - The data are intended for exploration and reproducible simulator inputs; they do not by themselves establish forecast or deployment performance.
 
 The code that consumes this bundle is available at [Peva-Gen-release](https://github.com/Xuefeng-Du1121/Peva-Gen-release).
+
+For the formal ocean-field experiments, the surface current field is:
+
+`ocean_system_data_20260913T024902Z/drift-trajectory-system/data_platform/data/raw/environment/copernicus/multobs_currents_east_china_2018_01.nc`
+
+It provides the `total_u` and `total_v` variables expected by `peva_sim.ocean_field.OceanField`.

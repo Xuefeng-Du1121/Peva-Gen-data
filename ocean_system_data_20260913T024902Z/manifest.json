@@ -1,6 +1,6 @@
 {
   "created_utc": "20260913T024902Z",
-  "destination": "/home/ubuntu-a/data/peva-gen/ocean_system_data_20260913T024902Z",
+  "destination": "ocean_system_data_20260913T024902Z",
   "files": [
     {
       "path": "drift-trajectory-system/data/demo/era5_wind_20240801_24h.nc",
